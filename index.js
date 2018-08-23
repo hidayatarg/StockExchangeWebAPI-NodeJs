@@ -23,13 +23,18 @@ function getStock(stockName){
         response.on('end', ()=>{
             const stock= JSON.parse(body);
             // Read the properties
-             console.dir(stock);
+          //   console.dir(stock);
 
             // Print to Screen
-            console.log(`${stockName}(${stock.code})=>> Selling: ${stock.selling}     Buying: ${stock.buying}`);
-            
+          //  console.log(`${stockName}(${stock.code})=>> Selling: ${stock.selling}     Buying: ${stock.buying}`);
+            printStock(stockName, stock.code, stock.selling, stock.buying);
         });
 
     });
+}
+
+function printStock(stockName, stockCode,selling, buying){
+    console.log(`${stockName}(${stockCode})=>> Selling: ${selling}     Buying: ${buying}`);
+    
 }
 
