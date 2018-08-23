@@ -1,16 +1,16 @@
 
 const https= require('https');
 
-getStock('USD');
+//getStock('USD');
 
 function getStock(stockName){
     const request = https.get(`https://www.doviz.com/api/v1/currencies/${stockName}/latest`, response => {
         //check if the service is working or not 
-        console.log(response.statusCode);
+     /*   console.log(response.statusCode);
         if (response.statusCode===200){
             console.log("Service is Working Properly");
         }
-
+*/
         //const blast the error
         let body = '';
         // Read the repsonse
@@ -37,4 +37,10 @@ function printStock(stockName, stockCode,selling, buying){
     console.log(`${stockName}(${stockCode})=>> Selling: ${selling}     Buying: ${buying}`);
     
 }
+
+const stockNames=['USD','EUR'];
+
+stockNames.forEach(stock=>{
+    getStock(stock);
+});
 
