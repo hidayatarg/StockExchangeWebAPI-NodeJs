@@ -4,11 +4,10 @@ const https= require('https');
 //getStock('USD');
 
 function getStock(stockName){
-<<<<<<< HEAD
+
     
-=======
-    try {
->>>>>>> 9b0ffdfbf71be44a9e27c18b554b26a54353cdac
+
+   
         const request = https.get(`https://wwwdoviz.com/api/v1/currencies/${stockName}/latest`, response => {
             //check if the service is working or not 
             /*   console.log(response.statusCode);
